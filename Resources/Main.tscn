@@ -1,0 +1,141 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/FlatShip.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Treasure.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Plank.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/CoinBag.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/heart.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Main.gd" type="Script" id=7]
+[ext_resource path="res://Resources/Piratekeg.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Resources/Hit_Hurt.wav" type="AudioStream" id=9]
+[ext_resource path="res://Resources/Death.wav" type="AudioStream" id=10]
+[ext_resource path="res://Resources/water_tile_set.tres" type="TileSet" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 72
+font_data = ExtResource( 8 )
+
+[node name="World" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Player" parent="." groups=[
+"player",
+] instance=ExtResource( 1 )]
+position = Vector2( 336, 384 )
+
+[node name="Ship" parent="." instance=ExtResource( 2 )]
+position = Vector2( 824, 472 )
+z_index = -4000
+
+[node name="Plank" parent="." groups=[
+"planks",
+] instance=ExtResource( 4 )]
+position = Vector2( 488, 640 )
+
+[node name="Treasure" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1104, 264 )
+
+[node name="Treasure2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 64, 264 )
+
+[node name="Treasure3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 64, 584 )
+
+[node name="Treasure4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1104, 592 )
+
+[node name="heart" type="Sprite" parent="." groups=[
+"lives",
+]]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="heart2" type="Sprite" parent="." groups=[
+"lives",
+]]
+position = Vector2( 96, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="heart3" type="Sprite" parent="." groups=[
+"lives",
+]]
+position = Vector2( 160, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="Plank2" parent="." groups=[
+"planks",
+] instance=ExtResource( 4 )]
+position = Vector2( 616, 192 )
+rotation = 3.14159
+
+[node name="CoinBag" parent="." instance=ExtResource( 5 )]
+position = Vector2( 544, 424 )
+
+[node name="WinLabel" type="Label" parent="."]
+visible = false
+margin_left = 272.0
+margin_top = 288.0
+margin_right = 1045.0
+margin_bottom = 437.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.933333, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "YOU WIN"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestartLabel" type="Label" parent="."]
+visible = false
+margin_left = -248.0
+margin_top = 416.0
+margin_right = 1620.0
+margin_bottom = 565.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.176471, 0.835294, 0.215686, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Press 'R' to restart"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoseLabel" type="Label" parent="."]
+visible = false
+margin_left = 192.0
+margin_top = 288.0
+margin_right = 1184.0
+margin_bottom = 437.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.898039, 0.180392, 0.180392, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "GAME OVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hit_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="Death_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+z_index = -4096
+tile_set = ExtResource( 11 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0 )

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Resources/flat_ship.png" type="Texture" id=1]
+
+[node name="FlatShip" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -920, 260, -932, -36, -812, -32, -808, 124, -696, 156, -616, 176, -380, 180, -280, 184, -72, 188, 80, 188, 184, 176, 260, 156, 348, 120, 436, 48, 500, -4, 520, -20, 520, -128, 612, -128, 608, 136, 268, 292, -792, 284 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -812, -32, -812, -188, -804, -256, -800, -264, -788, -272, -620, -296, -456, -296, -384, -288, -108, -300, -84, -304, 68, -304, 184, -296, 260, -276, 328, -248, 384, -220, 452, -172, 528, -120, 624, -128, 436, -360, -192, -400, -976, -340, -956, -16 )
+
+[node name="flat_ship" type="Sprite" parent="."]
+position = Vector2( 0, 1.90735e-06 )
+scale = Vector2( 2.3, 2.3 )
+texture = ExtResource( 1 )

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GunFire.wav-2ce0932913dcdfdcd6951392f4f57bda.sample"
+
+[deps]
+
+source_file="res://Resources/GunFire.wav"
+dest_files=[ "res://.import/GunFire.wav-2ce0932913dcdfdcd6951392f4f57bda.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

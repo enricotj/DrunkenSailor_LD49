@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/TreasureGrab.wav-1357f08b4a7d33b12249bb39129888f9.sample"
+
+[deps]
+
+source_file="res://Resources/TreasureGrab.wav"
+dest_files=[ "res://.import/TreasureGrab.wav-1357f08b4a7d33b12249bb39129888f9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

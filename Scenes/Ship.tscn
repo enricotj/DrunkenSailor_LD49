@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Resources/ship.png" type="Texture" id=1]
+
+[node name="Ship" type="Node2D"]
+
+[node name="ship" type="Sprite" parent="."]
+scale = Vector2( 2.3, 2.3 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -264, 184, 80, 192, 272, 152, 344, 120, 384, 88, 448, 40, 520, -24, 520, -128, 576, -128, 544, 152, 64, 256, -784, 256, -808, 96, -696, 128, -624, 144, -560, 152, -352, 152, -352, 144 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 520, -120, 576, -120, 576, -192, 360, -352, -800, -368, -992, -352, -960, 144, -800, 152, -808, 96, -808, 8, -816, 8, -816, -176, -808, -216, -800, -296, -616, -328, -392, -320, -352, -312, -248, -296, -24, -304, 184, -296, 256, -280, 376, -224, 520, -128 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -260, -176, -260, -184, -352, -216, -352, 44, -260, 76, -260, 72, -344, 40, -344, -176 )
